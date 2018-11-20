@@ -1,0 +1,124 @@
+/* ----------------------------------------- */
+/* Icon Bar */
+.icon-bar {
+	display: block;
+	float: left;
+	margin: 0;
+	top: 0;
+	left: 0;
+	width: 75px;
+	height: 100%;
+	background-color: #222425;
+	border-right: 1px solid #51565b;
+	z-index: 2;
+	position: relative;
+}
+
+.icon-bar a {
+	display: block;
+	text-align: center;
+	padding: 12px;
+	transition: all 0.3s ease;
+	color: white;
+	font-size: 30px;
+	margin: 0px 5px;
+}
+
+.icon-bar a:hover {
+	background-color: #000;
+}
+
+.active {
+	background-color: #0088ce;
+	border-radius: 10px;
+}
+/* ----------------------------------------- */
+/* ----------------------------------------- */
+/* Toggle Hamburger Menu Button Effects */
+.toggleNav {
+	width: 28px;
+	height: 30px;
+	margin: 0 auto 10px auto;
+	padding-top: 20px;
+	cursor: pointer;
+}
+
+.toggleNav div {
+	width: 100%;
+	height: 5px;
+	background: white;
+	margin: 0 auto 4px auto;
+	transition: all 0.3s;
+	backface-visibility: hidden;
+}
+
+.change .one {
+	transform: rotate(45deg) translate(5px, 5px);
+}
+
+.change .two {
+	opacity: 0;
+}
+
+.change .three {
+	transform: rotate(-45deg) translate(7px, -8px);
+}
+/* ----------------------------------------- */
+/* Toggle Most Recent Tabs */
+.Toggle:after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.Toggle-items {
+	position: relative;
+	margin-bottom: 20px;
+	background: #efefef;
+	border-radius: 10px;
+	float: left;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+
+.Toggle-item {
+	position: relative;
+	z-index: 1;
+	display: block;
+	padding: 12px 20px 10px 20px;
+	text-align: center;
+	font-size: 15px;
+	opacity: 0.7;
+	cursor: pointer;
+	transition: 0.25s ease opacity, 0.5s ease color;
+	font-family: "Hind";
+	-webkit-user-select: none;
+	/* Chrome all / Safari all */
+	-moz-user-select: none;
+	/* Firefox all */
+	-ms-user-select: none;
+	/* IE 10+ */
+	user-select: none;
+	/* Likely future */
+}
+.Toggle-item:hover {
+	opacity: 1;
+}
+
+.Toggle-item--active {
+	color: white;
+	opacity: 1;
+}
+
+.Toggle-background {
+	background: gray;
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 50px;
+	border-radius: 10px;
+	transition: 0.4s ease left, 0.2s ease width, 0.2s ease border;
+	z-index: 0;
+	will-change: left, width;
+}
