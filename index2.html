@@ -4,18 +4,12 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Multi-Level Push Menu - Demo 2</title>
-		<meta name="description" content="Multi-Level Push Menu: Off-screen navigation with multiple levels" />
-		<meta
-			name="keywords"
-			content="multi-level, menu, navigation, off-canvas, off-screen, mobile, levels, nested, transform"
-		/>
-		<meta name="author" content="Codrops" />
+		<title>Executive Interface</title>
 
 		<!-- Font Awesome CDN -->
 		<!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
 
-		<link rel="shortcut icon" href="../favicon.ico" />
+		<!-- <link rel="shortcut icon" href="../favicon.ico" /> -->
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
 		<link rel="stylesheet" type="text/css" href="css/iconBar.css" />
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
@@ -28,7 +22,7 @@
 		<div class="icon-bar">
 			<a href="#" class="trigger"> <i class="fa-icon-bar fa-bars"></i> </a>
 
-			<a class="btn tablinks trigger" onclick="openTab(event, 'content')" href="#"
+			<a class="btn tablinks trigger" onclick="openTab(event, 'content')" id="defaultOpen" href="#"
 				><i class="fa-icon-bar fa-folder-o"></i
 			></a>
 
@@ -40,9 +34,9 @@
 				><i class="fa-icon-bar fa-th-large"></i
 			></a>
 
-			<a class="btn tablinks end" onclick="printList()" id="defaultWallSettings" href="#"
-				><i class="fa-icon-bar fa-refresh"></i
-			></a>
+			<a class="btn tablinks end" onclick="printList()" href="#"><i class="fa-icon-bar fa-refresh"></i></a>
+			<a class="btn tablinks end" id="searchPlus" href="#"><i class="fa-icon-bar fa-search-plus"></i></a>
+			<a class="btn tablinks end" id="searchMinus" href="#"><i class="fa-icon-bar fa-search-minus"></i></a>
 		</div>
 		<!-- Push Wrapper -->
 		<div class="mp-pusher" id="mp-pusher">
@@ -60,23 +54,9 @@
 						<li>
 							<a href="#"><i class="fa fa-globe"></i>Browsers<i class="fa fa-chevron-right"></i></a>
 							<div class="mp-level">
-								<h2><i class="fa fa-globe"></i>Browsers</h2>
+								<h2>Browsers</h2>
 								<a class="mp-back" href="#">back</a>
-								<ul id="browsers">
-									<li class="icon icon-arrow-left">
-										<a class="icon icon-phone" href="#">Mobile Phones</a>
-										<div class="mp-level">
-											<h2>Mobile Phones</h2>
-											<a class="mp-back" href="#">back</a>
-											<ul>
-												<li><a href="#">Super Smart Phone</a></li>
-												<li><a href="#">Thin Magic Mobile</a></li>
-												<li><a href="#">Performance Crusher</a></li>
-												<li><a href="#">Futuristic Experience</a></li>
-											</ul>
-										</div>
-									</li>
-								</ul>
+								<ul id="browsers"></ul>
 							</div>
 						</li>
 						<li>
@@ -119,6 +99,41 @@
 								<ul id="vstreams"></ul>
 							</div>
 						</li>
+						<li>
+							<a href="#"><i class="fa fa-folder"></i>Test Folder<i class="fa fa-chevron-right"></i></a>
+							<div class="mp-level">
+								<h2>Test Folder</h2>
+								<a class="mp-back" href="#">back</a>
+								<ul>
+									<li>
+										<a href="#"><i class="fa fa-folder"></i>Sample Folder<i class="fa fa-chevron-right"></i></a>
+										<div class="mp-level">
+											<h2>Sample Folder</h2>
+											<a class="mp-back" href="#">back</a>
+											<ul>
+												<li>
+													<a href="#"><i class="fa fa-folder"></i>Another Folder<i class="fa fa-chevron-right"></i></a>
+													<div class="mp-level">
+														<h2>Another Folder</h2>
+														<a class="mp-back" href="#">back</a>
+														<ul>
+															<li><a href="#">Another One</a></li>
+															<li><a href="#">Yet Another</a></li>
+														</ul>
+													</div>
+												</li>
+												<li><a href="#">Content 1</a></li>
+												<li><a href="#">Content 2</a></li>
+												<li><a href="#">Content 3</a></li>
+												<li><a href="#">Content 4</a></li>
+											</ul>
+										</div>
+									</li>
+									<li><a href="#">Some Content</a></li>
+								</ul>
+							</div>
+						</li>
+
 						<!-- <li><a class="icon icon-photo" href="#">Collections</a></li> -->
 						<!-- <ul id="fileList"></li> -->
 					</ul>
@@ -130,7 +145,31 @@
 		</div>
 		<!-- /pusher -->
 
-		<!-- <div class="container"><h2>Test Test Test</h2></div> -->
+		<div class="sidenav">
+			<div id="content" class="tabContent">
+				<!--
+					<div class="Toggle">
+					    <div class="Toggle-items">
+
+					        <label for="content-1" class="Toggle-item">Content</label>
+
+					        <label for="content-2" class="Toggle-item">Most Recent</label>
+
+					    </div>
+
+					</div>
+				-->
+
+				<a href="#Main">Main Folder</a> <a href="#Pictures">Pictures</a> <a href="#Streaming">Streaming</a>
+			</div>
+
+			<div id="settings" class="tabContent">
+				<a href="#Main">Clear Wall</a> <a href="#Pictures">Sleep Mode is Off</a>
+				<a href="#Streaming">Scheduler is Off</a>
+			</div>
+
+			<div id="walls" class="tabContent"><a href="#Main">Wall One</a> <a href="#Pictures">Wall Two</a></div>
+		</div>
 
 		<!-- /container -->
 		<script src="js/main.js"></script>

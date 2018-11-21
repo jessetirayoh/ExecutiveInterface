@@ -16,25 +16,25 @@ function openTab(evt, tabName) {
 	for (i = 0; i < tabLinks.length; i++) {
 		tabLinks[i].className = tabLinks[i].className.replace(" active", "");
 	}
-	document.getElementById(tabName).style.display = "block";
+	// document.getElementById(tabName).style.display = "block";
 	evt.currentTarget.className += " active";
 
 	if (openFolder.classList.contains("active") == true) {
-		openFolder.getElementsByTagName("i")[0].attributes[0].nodeValue = "fa fa-folder-open-o";
+		openFolder.getElementsByTagName("i")[0].attributes[0].nodeValue = "fa-icon-bar fa-folder-open-o";
 	} else if (openFolder.classList.contains("active") == false) {
-		openFolder.getElementsByTagName("i")[0].attributes[0].nodeValue = "fa fa-folder-o";
+		openFolder.getElementsByTagName("i")[0].attributes[0].nodeValue = "fa-icon-bar fa-folder-o";
 	}
 
 	if (openSettings.classList.contains("active") == true) {
-		openSettings.getElementsByTagName("i")[0].attributes[0].nodeValue = "fa fa-cogs";
+		openSettings.getElementsByTagName("i")[0].attributes[0].nodeValue = "fa-icon-bar fa-cogs";
 	} else if (openSettings.classList.contains("active") == false) {
-		openSettings.getElementsByTagName("i")[0].attributes[0].nodeValue = "fa fa-cog";
+		openSettings.getElementsByTagName("i")[0].attributes[0].nodeValue = "fa-icon-bar fa-cog";
 	}
 
 	if (openWallSettings.classList.contains("active") == true) {
-		openWallSettings.getElementsByTagName("i")[0].attributes[0].nodeValue = "fa fa-th";
+		openWallSettings.getElementsByTagName("i")[0].attributes[0].nodeValue = "fa-icon-bar fa-th";
 	} else if (openWallSettings.classList.contains("active") == false) {
-		openWallSettings.getElementsByTagName("i")[0].attributes[0].nodeValue = "fa fa-th-large";
+		openWallSettings.getElementsByTagName("i")[0].attributes[0].nodeValue = "fa-icon-bar fa-th-large";
 	}
 }
 /* ----------------------------------------- */

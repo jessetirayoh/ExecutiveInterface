@@ -15,7 +15,7 @@ body,
 img {
 	margin-left: 0.4em;
 	margin-right: 0.4em;
-	border: 1px solid white;
+	border: 1px solid #5e646a;
 	border-radius: 3px;
 	width: 126px;
 	height: 90px;
@@ -185,6 +185,7 @@ img {
 }
 
 .mp-menu ul li {
+	margin-bottom: 0.4em;
 	overflow-x: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
@@ -372,7 +373,7 @@ img {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	background: #0088ce;
+	background: #5e646a;
 
 	border-radius: 10px;
 }

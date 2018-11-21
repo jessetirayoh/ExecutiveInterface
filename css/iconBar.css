@@ -1,7 +1,8 @@
 /* ----------------------------------------- */
 /* Icon Bar */
 .icon-bar {
-	display: block;
+	display: flex;
+	flex-direction: column;
 	float: left;
 	margin: 0;
 	top: 0;
@@ -33,6 +34,14 @@
 	border-radius: 10px;
 }
 /* ----------------------------------------- */
+#searchPlus {
+	margin-top: auto;
+}
+
+#searchMinus {
+	margin-bottom: 0.4em;
+}
+
 /* ----------------------------------------- */
 /* Toggle Hamburger Menu Button Effects */
 .toggleNav {
