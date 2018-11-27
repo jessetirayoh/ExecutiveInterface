@@ -7,9 +7,29 @@
 }
 
 html,
-body,
 .scroller {
 	height: 100%;
+}
+
+body {
+	height: 100%;
+	overflow: hidden;
+	background: #2f3133;
+	color: #fff;
+	font-weight: 300;
+	font-family: "Lato", Calibri, Arial, sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: #f7f7f7;
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	color: #fff;
+	outline: none;
 }
 
 img {
