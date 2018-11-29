@@ -1,4 +1,82 @@
 /* ----------------------------------------- */
+/* Drag and Drop Functionality */
+
+/* Allows the image/object to be draggable */
+function drag(evt) {
+	var targetID = evt.target.id;
+	evt.dataTransfer.setData("key", targetID);
+	console.log("it's dragging...");
+	// console.log(targetID);
+}
+
+/* Allows the area to receive the dragged object */
+function allowDrop(evt) {
+	evt.preventDefault();
+	console.log("item being dragged to valid location...");
+}
+
+/* Drop image on canvas and open on controller/wall */
+function publishContent(evt) {
+	var dataKey = evt.dataTransfer.getData("key");
+	evt.preventDefault();
+
+	var i = 0;
+
+	// Prints the image on the web wall
+	var nodeCopy = document.getElementById(dataKey).cloneNode(true);
+	nodeCopy.id = "newId"; /* We cannot use the same ID */
+	evt.target.appendChild(nodeCopy);
+	console.log("Item dropped");
+
+	var data =
+		'<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n<Commands>\n\t<action type="list">\n\t\n\t</action>\n</Commands>';
+
+	var xhr = new XMLHttpRequest();
+
+	xhr.open("POST", "http://localhost:8000/xmlcommand");
+	xhr.send(data);
+
+	xhr.onload = function() {
+		// checkOpenContent();
+		var xmlDoc = this.responseXML;
+		var x = xmlDoc.getElementsByTagName("Object");
+		var allName = [];
+
+		for (var i = 0; i < x.length; i++) {
+			var nameXML = x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+			var nameX = { nameXML };
+			allName.push(nameX);
+			if (dataKey == allName[i].nameXML) {
+				console.log("Success");
+				console.log(allName[i].nameXML);
+				var data =
+					'<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n<Commands>\n\t<command type="open">\n\t\t<name>' +
+					nameXML +
+					"</name>\n\t\t<id>" +
+					randomID() +
+					"</id>\n\t\t\n\t</command>\n</Commands>";
+
+				var xhr = new XMLHttpRequest();
+				xhr.open("POST", "http://localhost:8000/xmlcommand");
+				xhr.send(data);
+
+				xhr.onload = function() {
+					console.log("Hiperwall Updated");
+				};
+			}
+		}
+	};
+}
+
+/* Random ID Generator for the preview images */
+function randomID() {
+	var S4 = function() {
+		return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+	};
+	return S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4();
+}
+
+/* ----------------------------------------- */
 /* Set the active button on the icon bar and opens the tab content accordingly */
 // document.getElementById("defaultOpen").click();
 
@@ -70,7 +148,7 @@ function printList() {
 		}
 	});
 
-	xhr.open("POST", "http://10.1.4.3:8000/xmlcommand");
+	xhr.open("POST", "http://localhost:8000/xmlcommand");
 	xhr.overrideMimeType("text/xml");
 	xhr.send(data);
 }
@@ -114,7 +192,7 @@ function getNameXML(xml) {
 		var xhr = new XMLHttpRequest();
 		xhr.responseType = "blob";
 
-		xhr.open("POST", "http://10.1.4.3:8000/xmlcommand");
+		xhr.open("POST", "http://localhost:8000/xmlcommand");
 		xhr.send(data);
 
 		xhr.onload = function() {

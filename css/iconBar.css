@@ -8,7 +8,7 @@
 	top: 0;
 	left: 0;
 	width: 75px;
-	height: 100%;
+	height: 100vh;
 	background-color: #222425;
 	border-right: 1px solid #51565b;
 	z-index: 2;
