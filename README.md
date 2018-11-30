@@ -16,19 +16,24 @@ Code production and preview can be done here.
 
 Plugins / Extensions:
 
-- Live Server by Ritwick Dey [<b>ESSENTIAL</b>]
+- Live Server by <i>Ritwick Dey</i> [<b>ESSENTIAL</b>]
   Launch a development local server with live reload feature for static and dynamic pages.
 
-* JavaScript (ES6) Code Snippets by Charalampos Karypidis [<b>ESSENTIAL</b>]
+* JavaScript (ES6) Code Snippets by <i>Charalampos Karypidis</i> [<b>ESSENTIAL</b>]
   Allows user to avoid repetitive typing in the course of routine edit operations.
 
-- Bracket Pair Colorizer by CoenraadS [<b>Optional</b>]
+- Bracket Pair Colorizer by <i>CoenraadS</i> [<b>Optional</b>]
   Allows matching brackets to be identified with colors. Makes code easier to read.
 
-* Prettier - Code Formatter by Esben Petersen [<b>Optional</b>]
+* Prettier - Code Formatter by <i>Esben Petersen</i> [<b>Optional</b>]
   Allows formatting of Javascript and CSS. Makes code easier to read.
 
 Modern Browser Compatibility: Modern features such as the dark custom navbar is available in Chrome but not supported in Firefox.
+
+Since CORS is currently an issue for the EI to interact with HiperInterface, during test it is recommended for the browsers to install a plugin to allow CORS:
+
+- <b>For Mozilla</b>: CORS Everywhere by <i>spenibus</i>
+- <b>For Chrome</b>: Allow-Control-Allow-Origin:\* by <i>vitvad</i>
 
 ---
 
@@ -101,3 +106,12 @@ JavaScript file for creating the multi-level menu with nested folders navigation
 ###### modernizr.custom.js (3rd party)
 
 JavaScript file that contains custom code to automatically detect the availability of next-generation web technologies in user's browsers.
+
+---
+
+### Possible Setback for Future Consideration
+
+- Have a way possible for the Controller GUI to interact with the canvas
+- Possibly have layered canvas to indicate different positions of content just like it's shown in the Controller GUI
+- Drawing order of the GUI translated to the interface's canvas
+- randomID generator might need to be changed if it proofs to be a hindrance in future functionalities
